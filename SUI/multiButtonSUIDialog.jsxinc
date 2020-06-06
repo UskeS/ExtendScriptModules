@@ -1,16 +1,17 @@
 /**
- * Display a multi-button dialog as easily as an AppleScript dialog.
- * 引数に応じた複数ボタンのダイアログを生成して表示します。
- * If the button is pressed, the return value is the index of the pressed button +5.
- * ボタンが押された場合、押されたボタンのインデックス＋5の値が戻り値になります。
+ * Display a multi-button dialog as easily as an AppleScript dialog.  
+ * 引数に応じた複数ボタンのダイアログを生成して表示します。  
+ * The return value is the name of the pressed button.  
+ * ボタンが押された場合、押されたボタンの名前が戻ります。
  * @example
  * multiBtnDlg("dialog title", "which do you like?", ["Apple", "Orange", "Banana"], 0);
- * // If Apple is pressed, method returns 5 (number).
+ * // If Apple is pressed, the return value is "Apple".
+ * @version 0.0.2 戻り値をボタンの名前に変更した
  * @param {string} title
  * @param {string} text
  * @param {string[]} list
  * @param {number} focus
- * @returns {number} 押されたボタンのインデックス+5（キャンセルされた場合はnull）
+ * @returns {string|null} 押されたボタンの名前（キャンセルされた場合はnull）
  */
 function multiBtnDlg(title, text, list, focus) {
     var cDlg = new Window("dialog", title);
@@ -23,10 +24,14 @@ function multiBtnDlg(title, text, list, focus) {
         } else {
             btnList.push(btnGrp.add("button", undefined, list[i]));
         }
-        eval(
-        "btnList[i].onClick = function() {\n"+
-        "    cDlg.close("+(i+5)+");\n"+
-        "}");
+        btnList[i].onClick = function() {
+            var value = i;
+            return function() {
+                cDlg.close(value + 5);
+            }
+        }();
     }
-    return cDlg.show();
+    var result = cDlg.show();
+    if (result === 2) return null;
+    return list[result - 5];
 };
