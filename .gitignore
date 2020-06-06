@@ -16,3 +16,4 @@ Thumbs.db
 #--Adobe ExtendScript Debugger
 launch.json
 .vscode/
+test.jsx
