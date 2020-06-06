@@ -29,6 +29,6 @@ For more details about preprocessor directives, see 'JAVASCRIPT TOOLS GUIDE'.
 see [LICENSE](LICENSE).
 
 ## about common modules
-Modules in common folder are testd in InDesign and Illustrator.  
-If you use these in other apps, test it carefully.
+Modules in common folder are tested in InDesign and Illustrator.  
+If you use any common module in other apps, test it carefully.
 
