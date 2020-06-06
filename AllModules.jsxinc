@@ -1,0 +1,13 @@
+/**
+ * @fileoverview Import all script modules.
+ * @author SAEGUSA Yusuke
+ * @description [readme](readme.md)
+ */
+
+//@includepath "common; SUI; InDesign;"
+
+//@include "array_filter.jsxinc"
+//@include "array_some.jsxinc"
+//@include "json2.jsxinc"
+
+//@include "multiButtonSUIDialog.jsxinc"
