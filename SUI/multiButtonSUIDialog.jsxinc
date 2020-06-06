@@ -1,12 +1,11 @@
 /**
- * @fileoverview Display a multi-button dialog as easily as an AppleScript dialog.
- * @author SAEGUSA Yusuke
- * @version 0.0.1
- */
-
-/**
+ * Display a multi-button dialog as easily as an AppleScript dialog.
  * 引数に応じた複数ボタンのダイアログを生成して表示します。
- * ボタンが押された場合、押されるボタンのインデックス＋5の値が戻り値になります。
+ * If the button is pressed, the return value is the index of the pressed button +5.
+ * ボタンが押された場合、押されたボタンのインデックス＋5の値が戻り値になります。
+ * @example
+ * multiBtnDlg("dialog title", "which do you like?", ["Apple", "Orange", "Banana"], 0);
+ * // If Apple is pressed, method returns 5 (number).
  * @param {string} title
  * @param {string} text
  * @param {string[]} list
@@ -31,6 +30,3 @@ function multiBtnDlg(title, text, list, focus) {
     }
     return cDlg.show();
 };
-
-var res = multiBtnDlg("タイトル", "ほげほげ", ["foo", "bar", "hey"], 2);
-$.writeln(res);
