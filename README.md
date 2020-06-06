@@ -15,18 +15,27 @@ You can also use `//@includepath`
 (It's useful when importing multiple modules.) :
 
 ```javascript
-//@includepath "~/ExtendScriptModules/"
-//@include "common/array_filter.jsxinc"
-//@include "common/json2.jsxinc"
-//@include "common/exportTextFile.jsxinc"
-//@include "SUI/multiButtonSUIDialog.jsxinc"
+//@includepath "common; SUI; InDesign;"
+//@include "array_filter.jsxinc"
+//@include "json2.jsxinc"
+//@include "exportTextFile.jsxinc"
+//@include "multiButtonSUIDialog.jsxinc"
 ```
 
 For more details about preprocessor directives, see 'JAVASCRIPT TOOLS GUIDE'.
 
+If you want to import all script modules, import 'AllModules.jsxinc'.
+```javascript
+//@include "~/ExtendScriptModules/AllModules.jsxinc"
+```
+
 # notice
 ## license
 see [LICENSE](LICENSE).
+
+## the same name function
+**Do not use a function with the same name as modules in any scope.**  
+It can cause serious malfunctions.
 
 ## about common modules
 Modules in common folder are tested in InDesign and Illustrator.  
