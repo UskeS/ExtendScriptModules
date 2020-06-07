@@ -4,16 +4,17 @@
  * The return value is the name of the pressed button.  
  * ボタンが押された場合、押されたボタンの名前が戻ります。
  * @example
- * multiBtnDlg("dialog title", "which do you like?", ["Apple", "Orange", "Banana"], 0);
+ * ESUtil.multiBtnDlg("dialog title", "which do you like?", ["Apple", "Orange", "Banana"], 0);
  * // If Apple is pressed, the return value is "Apple".
- * @version 0.0.2 戻り値をボタンの名前に変更した
+ * @version 0.1.0
  * @param {string} title
  * @param {string} text
  * @param {string[]} list
  * @param {number} focus
  * @returns {string|null} 押されたボタンの名前（キャンセルされた場合はnull）
  */
-function multiBtnDlg(title, text, list, focus) {
+var ESUtil = ESUtil || {};
+ESUtil.multiButtonSUIDialog = function(title, text, list, focus) {
     var cDlg = new Window("dialog", title);
     cDlg.add("statictext", undefined, text, {multiline: true});
     var btnGrp = cDlg.add("group");

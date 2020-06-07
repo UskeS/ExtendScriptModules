@@ -1,6 +1,7 @@
 /**
  * @fileoverview Import all script modules.
  * @author SAEGUSA Yusuke
+ * @version 0.1.0 ESUtilオブジェクトを利用して、モジュールをそのメソッドとして追加する仕様に変更
  * @description [readme](readme.md)
  */
 
