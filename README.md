@@ -6,6 +6,7 @@ Clone or download this repositry.
 If you download, I recommend putting this repositry in your home folder.
 
 # Usage
+## Import modules
 You can import these modules using the preprocessor directives, for example:
 ```javascript
 //@include "~/ExtendScriptModules/common/array_filter.jsxinc"
@@ -28,9 +29,21 @@ If you want to import all script modules, import 'AllModules.jsxinc'.
 ```javascript
 //@include "~/ExtendScriptModules/AllModules.jsxinc"
 ```
+## Call methods
+Some modules are stored `ESUtil` object.
+```javascript
+var result = ESUtil.multiBtnDlg("dialog title", "which do you like?", ["Apple", "Orange", "Banana"], 0);
+```
 
-# notice
-## license
+There are also modules that use prototype extensions.
+```javascript
+var even = [10, 4, 7, 1, 12, 9].filter(function(el){
+    return el % 2 === 0;
+});
+```
+
+# Notice
+## License
 see [LICENSE](LICENSE).
 
 ## the same name function
