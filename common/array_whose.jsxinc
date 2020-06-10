@@ -1,0 +1,24 @@
+/**
+ * Extracts and returns an array with specific properties and values.  
+ * 配列の中から、特定のプロパティと値を持ったものを配列として返します。  
+ * Array.filter()メソッドと似ていますが、filterでは引数にコールバック指定するのに対し、whoseはオブジェクトを指定します。
+ * @example 
+ * // getting a specific paragraph style (e.g. it has name of "hoge")  
+ * app.activeDocument.allParagraphStyles.whose({name: "hoge"});  
+ * // getting a left hand page  
+ * app.activeDocument.pages.everyItem().getElements().whose({side: PageSideOptions.LEFT_HAND});
+ * @version 0.0.1
+ */
+if (!Array.prototype.whose) {
+    Array.prototype.whose = function(obj) {
+        var that = this, result = [];
+        for (var i=0, len=that.length; i<len; i++) {
+            for (var key in obj) {
+                if (that[i].hasOwnProperty(key) && that[i][key] === obj[key]) {
+                    result.push(that[i]);
+                }
+            }
+        }
+        return result;
+    };
+}
