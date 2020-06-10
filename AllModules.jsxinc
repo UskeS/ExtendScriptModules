@@ -8,7 +8,9 @@
 //@includepath "common; SUI; InDesign;"
 
 //@include "array_filter.jsxinc"
+//@include "array_map.jsxinc"
 //@include "array_some.jsxinc"
+//@include "array_whose.jsxinc"
 //@include "json2.jsxinc"
 
 //@include "multiButtonSUIDialog.jsxinc"
